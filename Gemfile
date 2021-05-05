@@ -9,6 +9,7 @@ source 'http://rubygems.org'
   gem 'sqlite3', '~> 1.3.6'
   gem 'bcrypt'
   gem 'require_all'
+  gem 'rack_session_access'
 
   group :development do
     gem 'rack-test'
