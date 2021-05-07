@@ -1,6 +1,6 @@
 @media screen {
   /* --- Reset Styles --- */
-  * {
+  /* * {
     list-style: none;
     margin: 0;
     padding: 0;
@@ -9,11 +9,14 @@
   html, body {
     height: 100%;
     width: 100%;
-  }
+  } */
 
   /* --- Welcome Page Styles --- */
+  
   body {
-    background-color: rgb(219, 173, 230);
+    background-image: url("https://image.freepik.com/free-vector/lottery-balls-3d-bingo-lotto-keno-gambling-games_8071-2879.jpg");
+    
+    /* background-color: rgb(219, 173, 230); */
     color: rgb(51, 51, 51);
     font-family: Sans-Serif;
     line-height: 18px;
@@ -21,13 +24,31 @@
 
   .wrapper {
     background: #fff;
-    -moz-box-shadow: 0 0 10px rgba(0,0,0,.3);
-    -webkit-box-shadow: 0 0 10px rgba(0,0,0,.3);
-    box-shadow: 0 0 10px rgba(0,0,0,.3);
-    margin: 16px auto;
-    max-width: 960px;
+    /* -moz-box-shadow: 0 0 14px rgba(0,0,0,.3);
+    -webkit-box-shadow: 0 0 14px rgba(0,0,0,.3);
+    box-shadow: 0 0 14px rgba(0,0,0,.3); */
+    margin: 20px auto;
+    max-width: 460px;
     padding: 2.25%; /* 18px / 800px */
     width: 85%;
+  }
+
+  .powerball {
+
+    border: 1px solid #ddd;
+    padding: 5px;
+    width: 100px;
+    border-radius: 8px;
+    margin: 6px 0;
+  }
+
+  .logo {
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 85%;
+    /* margin-left: auto;
+    margin-right: auto; */
   }
 
   h1 {
@@ -36,6 +57,9 @@
   }
 
   h2 {
+    text-align: center;
+    vertical-align: middle;
+    line-height: 90px;
     color: rgba(4, 39, 116, 0.863);
     border-bottom: 2px solid rgba(27, 80, 196, 0.863);
     font-family: "ProximaNova-SemiBold";
@@ -67,11 +91,11 @@
     border: 1px solid #ccc;
     float: right;
     padding: 2.08333333333%; /* 5px / 240px */
-    width: 50%; /* 240px / 800px */
+    width: 40%; /* 240px / 800px */
   }
 
   .sidebar ul {
-    font-size: 14px;
+    font-size: 8px;
   }
 
   .branding {

@@ -10,7 +10,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_05_031614) do
+ActiveRecord::Schema.define(version: 2021_05_07_005333) do
+
+  create_table "account", force: :cascade do |t|
+    t.integer "user_id"
+  end
+
+  create_table "board", force: :cascade do |t|
+    t.string "name"
+    t.integer "user_id"
+    t.integer "preference_num1"
+    t.integer "preference_num2"
+    t.integer "preference_num3"
+    t.integer "preference_num4"
+    t.integer "preference_num5"
+    t.integer "preference_PB"
+    t.date "LUCKY_DAY_1"
+    t.date "LUCKY_DAY_2"
+    t.date "LUCKY_DAY_3"
+    t.string "result"
+    t.integer "account_id"
+  end
+
+  create_table "draws", force: :cascade do |t|
+    t.date "draw_date"
+    t.string "winning_numbers"
+    t.string "multiplier"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "username"

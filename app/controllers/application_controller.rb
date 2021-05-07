@@ -2,7 +2,8 @@ require './config/environment'
 require "./app/models/user"
 
 class ApplicationController < Sinatra::Base
-
+  set :views, proc { File.join(root, '../views/') }
+  register Sinatra::Twitter::Bootstrap::Assets
   configure do
     set :public_folder, 'public'
     set :views, 'app/views'
@@ -10,20 +11,28 @@ class ApplicationController < Sinatra::Base
     set :session_secret, "password_security"
   end
 
+  get "/logo" do
+    erb :index
+  end
+
   get "/" do
-    erb :welcome
+    erb :'/application/welcome'
   end
 
-  get "/signup" do
-    erb :welcome
+  get "/failure" do
+    erb :failure
   end
 
-  post "/signup" do
+  get "/application/signup" do
+    erb :'/application/welcome'
+  end
+
+  post "/application/signup" do
     #your code here
-    binding.pry
-    @user = User.new(:username => params[:username], :password => params[:password])
+    #binding.pry
+    @user = User.new(:username => params[:email], :password => params[:psw])
     
-		if params[:username] == ""
+		if params[:email] == ""
       redirect "/failure"
     elsif !@user.save
       redirect "/failure"
@@ -38,24 +47,24 @@ class ApplicationController < Sinatra::Base
     erb :login
   end
 
-  post "/login" do
+  post "/application/login" do
     ##your code here
-    #binding.pry
+    binding.pry
     @user = User.find_by(:username => params[:username])
 		if @user && @user.authenticate(params[:password])
 			session[:user_id] = @user.id
-			redirect "/account"
+			redirect "/application/account"
 		  else
 			redirect "/failure"
 		  end
   end
 
-  get '/account' do
+  get '/application/account' do
     @user = current_user
-    erb :account
+    erb :'/application/account'
   end
 
-  post '/account' do
+  post '/application/account' do
     @user = User.find(session[:user_id])
     @balance = @user.balance
     @wd = params[:withdrawal].to_i
@@ -68,14 +77,14 @@ class ApplicationController < Sinatra::Base
     end
       @user.balance = @balance
       @user.save
-    erb :account 
+    erb :'/application/account'
   end
 
   get "/failure" do
     erb :failure
   end
 
-  get "/logout" do
+  get "/application/logout" do
     session.clear
     redirect "/"
   end

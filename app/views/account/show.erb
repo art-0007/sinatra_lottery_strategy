@@ -1,0 +1,17 @@
+<h1>Welcome <%= current_user.username%>!</h1>
+
+
+<h2>List of your boards:</h2>
+<ul>
+  <%@boards.each do |b|%>
+  <li><%=b.name%></li>
+  <li><h4>Board: <a href="/boards/<%="#{@boards.find(b.id).id}"%>"><%="#{@figures.find(b.id).name}"%></a></h4></li>
+  <%end%>
+</ul>
+
+
+
+
+
+<a class="button" href="/logout">Logout</a>           
+<a class="button" href="/">Home</a>
