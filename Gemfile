@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-
+  gem 'nokogiri'
   gem 'sinatra'
   gem 'thin'
   gem 'activerecord', '5.2', :require => 'active_record'

@@ -124,6 +124,7 @@ DEPENDENCIES
   bcrypt
   capybara
   database_cleaner!
+  nokogiri
   pry
   rack-test
   rack_session_access

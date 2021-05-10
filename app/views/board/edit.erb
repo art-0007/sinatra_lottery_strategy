@@ -1,0 +1,43 @@
+<h2>Edit Board</h2>
+<h3>User Name: <%= current_user.username %></h3>
+
+<h3>User Preferences:</h3>
+<h3>STRATEGY LIST</h3>
+<p>For mix strategy enter the number of your shoosen strategy (1-4) to every single ticket number and powerball(last number)</p>
+<ul>
+  <li>For rarely dropped numbers strategy, enter 1.</li>
+  <li>For frequently dropped numbers strategy, enter 2.</li>
+  <li>For long-standing numbers strategy, enter 3.</li>
+  <li>For your lucky days strategy, enter 4.</li>
+</ul>
+<link rel="stylesheet" href="stylesheets/style2.css">
+
+<form action="/board/<%=@board.id%>" method="POST">
+<input id="hidden" type="hidden" name="_method" value="patch">
+<label>Board Name:</label>
+<input type="text" name="board[name]"  value=”<%= @board.name %>”>
+<br>
+<label>For_1:</label>
+<input type="text" name="board[preference_num1]"  value=”<%= @board.preference_num1 %>”>
+<label>For_2:</label>
+<input type="text" name="board[preference_num2]"  value=”<%= @board.preference_num2 %>”>
+<label>For_3:</label>
+<input type="text" name="board[preference_num3]"  value=”<%= @board.preference_num3 %>”>
+<label>For_4:</label>
+<input type="text" name="board[preference_num4]"  value=”<%= @board.preference_num4 %>”>
+<label>For_5:</label>
+<input type="text" name="board[preference_num5]"  value=”<%= @board.preference_num5 %>”>
+<label>For_PB:</label>
+<input type="integer" name="board[preference_PB]"  value=”<%= @board.preference_PB %>”>
+<br>
+<h3>User Lucky Days:</h3>
+<br>
+<label>Day_1:</label>
+<input type="date" name="board[LUCKY_DAY_1]"  >
+<label>Day_2:</label>
+<input type="date" name="board[LUCKY_DAY_2]"  >
+<label>Day_3:</label>
+<input type="date" name="board[LUCKY_DAY_3]" >
+<br>
+<input type="submit" value="Edit Board">
+</form>

@@ -18,7 +18,7 @@ class Scraper < ActiveRecord::Base
         #     puts @@claim.css(".HowToClaim__Description-bmbzfk-8 dXsmkZ").text
         # end
 
-        def self.top_5_largest_jackpots
+        def top_5_largest_jackpots
             @@doc = Nokogiri::HTML(open(SITE))
             puts @@doc.css("div section")[1].text
         end

@@ -1,0 +1,14 @@
+<h2> Welcome to Lottery Strategy <%= @user.username%>!</h2>
+<p>You can check our <a class="button" href="/application/index">APP INFO</a> for more information about available lottery strategies.</p>
+<h2>YOUR BOARDS:</h2>
+<ul>
+  <%Board.all.each do |b|%>
+  <%if b.user_id == @user.id%>
+  <li><h4>Board: <a href="/board/<%="#{@boards.find(b.id).id}"%>"><%="#{@boards.find(b.id).name}"%></a></h4></li>
+  <%end%>
+  <%end%>
+</ul>
+<div>
+  
+  <a class="button" href='/board/new'>"New Board</a>
+</div>

@@ -1,50 +1,49 @@
 <h2>Create New Board</h2>
-<h2>User Name: <%= @user.name %></h2>
-<%# <form action="/board/new" method="POST">
+<h3>User Name: <%= current_user.username %></h3>
 
-<label>Figure Name:</label>
-<input type="text" name="board[name]" id = "board_name"> %>
-
-<h2>User Preferences:</h2>
-<h2>"STRATEGY LIST"</h2>
-<h3>For mix strategy enter the number of your shoosen strategy (1-4) to every single ticket number and powerball(last number)</h3>
+<h3>User Preferences:</h3>
+<h3>STRATEGY LIST</h3>
+<p>For mix strategy enter the number of your shoosen strategy (1-4) to every single ticket number and powerball(last number)</p>
 <ul>
   <li>For rarely dropped numbers strategy, enter 1.</li>
   <li>For frequently dropped numbers strategy, enter 2.</li>
   <li>For long-standing numbers strategy, enter 3.</li>
   <li>For your lucky days strategy, enter 4.</li>
 </ul>
+<link rel="stylesheet" href="stylesheets/style2.css">
+
+<form action="/board" method="POST">
+<label>Board Name:</label>
+<input type="text" name="board[name]" id = "board_name">
+<br>
+<label>For_1:</label>
+<input type="text" name="board[preference_num1]" id = "pr_nmbs_1">
+<label>For_2:</label>
+<input type="text" name="board[preference_num2]" id = "pr_nmbs_2">
+<label>For_3:</label>
+<input type="text" name="board[preference_num3]" id = "pr_nmbs_3">
+<label>For_4:</label>
+<input type="text" name="board[preference_num4]" id = "pr_nmbs_4">
+<label>For_5:</label>
+<input type="text" name="board[preference_num5]" id = "pr_nmbs_5">
+<label>For_PB:</label>
+<input type="integer" name="board[preference_PB]" id = "pr_pwb_6">
+<br>
+<h3>User Lucky Days:</h3>
+<br>
+<label>Day_1:</label>
+<input type="date" name="board[LUCKY_DAY_1]" id = "lk_days_1">
+<label>Day_2:</label>
+<input type="date" name="board[LUCKY_DAY_2]" id = "lk_days_2">
+<label>Day_3:</label>
+<input type="date" name="board[LUCKY_DAY_3]" id = "lk_days_3">
+<br>
+<input type="submit" value="Create Board" id = "Create new Board">
+</form>
+
 
 
 <%# 
-<link rel="stylesheet" href="stylesheets/styles2.css">
-<input type="radio" name="item" checked="checked" id="section1" />
-        <input type="radio" name="item" id="section2" />
-        <input type="radio" name="item" id="section3" />
-        <input type="radio" name="item" id="section4" />
-
-        <nav class="nav">
-            <label class="nav__item" for="section1"></label>
-            <label class="nav__item" for="section2"></label>
-            <label class="nav__item" for="section3"></label>
-            <label class="nav__item" for="section4"></label>
-        </nav>
-
-        <section>
-            <h1>Single Page</h1>
-        </section>
-        <section>
-            <h1>Pure CSS</h1>
-        </section>
-        <section>
-            <h1>Full Screen</h1>
-        </section>
-        <section>
-            <h1>@ab's_WebZone</h1>
-        </section>
-
-        <div class="cover"></div>
-
 Number_1:
 Number_2:
 Number_3:

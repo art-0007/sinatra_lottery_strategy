@@ -1,2 +1,87 @@
 
-<h1>"Hello World!"</h1>
+<!DOCTYPE html>
+<html>
+<head>
+<h3>Board Name: <%=@board.name%></h3>
+<h3>User Name: <%=current_user.username%></h3>
+<style>
+h3 {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1.7em;
+  text-align: center;
+  color: SlateBlue;
+}
+table, th, td {
+  border: 2px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 5px;
+  text-align: center;    
+}
+#t01, #t02 {
+  width: 100%;    
+  background-color: #f1f1c1;
+}
+</style>
+</head>
+<body>
+
+
+<table style="width:100%">
+<caption>User Preferences:</caption>
+  <tr>
+    <th colspan="5">Numbers</th>
+    <th>Power Ball</th>
+  </tr>
+  <tr>
+    <td><%=@board.preference_num1%></td>
+    <td><%=@board.preference_num2%></td>
+    <td><%=@board.preference_num3%></td>
+    <td><%=@board.preference_num4%></td>
+    <td><%=@board.preference_num5%></td>
+    <td><%=@board.preference_PB%></td>
+  </tr>
+</table>
+<br>
+<table id="t01">
+  <tr>
+    <th colspan="3">User Lucky Days</th>
+  </tr>
+  <tr>
+    <td><%=@board.LUCKY_DAY_1%></td>
+    <td><%=@board.LUCKY_DAY_2%></td>
+    <td><%=@board.LUCKY_DAY_3%></td>
+  </tr>
+</table>
+<br>
+<table id="t02">
+  <tr>
+    <th colspan="2">User Results</th>
+  </tr>
+  <tr>
+    <td>Rarely dropped numbers strategy</td>
+    <td>1,2,3,4,5,6</td>
+  </tr>
+  <tr>
+    <td>Frequently dropped numbers strategy </td>
+    <td>1,2,3,4,5,6</td>
+  </tr>
+  <tr>
+    <td>Long-standing numbers strategy</td>
+    <td>1,2,3,4,5,6</td>
+  </tr>
+  <tr>
+    <td>Lucky days strategy</td>
+    <td>1,2,3,4,5,6</td>
+  </tr>
+  <tr>
+    <td>Mix strategy</td>
+    <td>1,2,3,4,5,6</td>
+  </tr>
+</table>
+<a class="button" href="/board/<%=@board.id%>/edit">Edit Board</a>
+<br>
+<a class="button" href="/users/index">Home</a>
+</body>
+</html>

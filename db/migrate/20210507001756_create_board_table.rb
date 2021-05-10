@@ -1,6 +1,6 @@
 class CreateBoardTable < ActiveRecord::Migration[5.2]
   def change
-    create_table :board do |b|
+    create_table :boards do |b|
       b.string :name
       b.integer :user_id
       b.integer :preference_num1
