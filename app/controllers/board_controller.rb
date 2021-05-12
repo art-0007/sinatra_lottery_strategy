@@ -1,5 +1,6 @@
-
 class BoardController < ApplicationController
+
+
     get '/board' do
         erb :'/board/index'
     end
@@ -38,18 +39,18 @@ class BoardController < ApplicationController
         binding.pry
         @board = Board.find_by_id(params[:id])
         
-        @board.name = params[:name]
-        @board.preference_num1 = params[:preference_num1]
-        @board.preference_num2 = params[:preference_num2]
-        @board.preference_num3 = params[:preference_num3]
-        @board.preference_num4 = params[:preference_num4]
-        @board.preference_num5 = params[:preference_num5]
-        @board.preference_PB = params[:preference_PB]
-        @board.LUCKY_DAY_1 = params[:LUCKY_DAY_1]
-        @board.LUCKY_DAY_2 = params[:LUCKY_DAY_2]
-        @board.LUCKY_DAY_3 = params[:LUCKY_DAY_3]
+        @board.name = params[:board][:name] unless params[:board][:name].empty?
+        @board.preference_num1 = params[:preference_num1] unless params[:board][:preference_num1].empty?
+        @board.preference_num2 = params[:board][:preference_num2] unless params[:board][:preference_num2].empty?
+        @board.preference_num3 = params[:board][:preference_num3] unless params[:board][:preference_num3].empty?
+        @board.preference_num4 = params[:board][:preference_num4] unless params[:board][:preference_num4].empty?
+        @board.preference_num5 = params[:board][:preference_num5] unless params[:board][:preference_num5].empty?
+        @board.preference_PB = params[:board][:preference_PB] unless params[:board][:preference_PB].empty?
+        @board.LUCKY_DAY_1 = params[:board][:LUCKY_DAY_1] unless params[:board][:LUCKY_DAY_1].empty?
+        @board.LUCKY_DAY_2 = params[:board][:LUCKY_DAY_2] unless params[:board][:LUCKY_DAY_2].empty?
+        @board.LUCKY_DAY_3 = params[:board][:LUCKY_DAY_3] unless params[:board][:LUCKY_DAY_3].empty?
         @board.save
-        redirect to :"/board/index"
+        redirect to :"/board/#{Board.last.id}"
       end
     
       

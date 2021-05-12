@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_10_170705) do
+ActiveRecord::Schema.define(version: 2021_05_11_141100) do
 
   create_table "all_draws", force: :cascade do |t|
     t.json "draw"
@@ -113,6 +113,7 @@ ActiveRecord::Schema.define(version: 2021_05_10_170705) do
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "password_digest"
+    t.string "name"
   end
 
 end

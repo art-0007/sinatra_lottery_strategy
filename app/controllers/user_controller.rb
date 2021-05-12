@@ -14,7 +14,6 @@ class UserController < ApplicationController
 
     post "/users/login" do
     ##your code here
-        binding.pry
         @user = User.find_by(:username => params[:username])
 		if @user && @user.authenticate(params[:password])
 			session[:user_id] = @user.id
@@ -23,5 +22,40 @@ class UserController < ApplicationController
 			redirect "/failure"
 		end
     end
+
+    get '/users/:id' do
+        binding.pry
+        @user = User.find(params[:id])
+        erb :'users/index'
+      end
+    
+      
+      get '/users/:id/edit' do  
+        @user =  User.find(params[:id])
+        #binding.pry
+        erb :'/users/edit'
+      end
+    
+      
+    
+      patch '/users/:id' do 
+        binding.pry
+        @user =  User.find(params[:id])
+        
+        @user.name = params[:name] unless params[:name].empty?
+        @user.username = params[:username] unless params[:username].empty?
+        @user.password = params[:password] unless params[:password].empty?
+        @user.save
+        redirect :"/"
+      end
+    
+      
+      delete "/users/:id"  do
+        @user = User.find(params[:id])
+        @user.destroy
+        redirect :'/application/welcome'
+      end
+
+      
 
 end

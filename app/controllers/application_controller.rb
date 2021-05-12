@@ -56,7 +56,7 @@ class ApplicationController < Sinatra::Base
 
     def top_5_largest_jackpots
       @@doc = Nokogiri::HTML(open(SITE))
-      puts @@doc.css("div section")[1].text
+      @@doc.css("div section")[1].text
     end
   end
 

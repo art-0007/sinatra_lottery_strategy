@@ -1,4 +1,4 @@
-<h2> Welcome to Lottery Strategy <%= @user.username%>!</h2>
+<h2> Welcome to Lottery Strategy <%= @user.name%>!</h2>
 <p>You can check our <a class="button" href="/application/index">APP INFO</a> for more information about available lottery strategies.</p>
 <h2>YOUR BOARDS:</h2>
 <ul>
@@ -9,6 +9,7 @@
   <%end%>
 </ul>
 <div>
-  
-  <a class="button" href='/board/new'>"New Board</a>
+  <a class="button" href="/users/<%=@user.id%>/edit">Edit User Info</a>
+  <a class="button" href='/board/new'>New Board</a>
+  <a href="/application/logout">Log Out</a>
 </div>

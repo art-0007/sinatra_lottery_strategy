@@ -3,7 +3,7 @@
 <html>
 <head>
 <h3>Board Name: <%=@board.name%></h3>
-<h3>User Name: <%=current_user.username%></h3>
+<h3>User Name: <%=current_user.name%></h3>
 <style>
 h3 {
   font-family: "Times New Roman", Times, serif;
@@ -80,6 +80,11 @@ th, td {
     <td>1,2,3,4,5,6</td>
   </tr>
 </table>
+<form method="post" action="/board/<%= @board.id %>">
+    <input id="hidden" type="hidden" name="_method" value="DELETE">
+    <input type="submit" value="delete">
+</form>
+<br>
 <a class="button" href="/board/<%=@board.id%>/edit">Edit Board</a>
 <br>
 <a class="button" href="/users/index">Home</a>

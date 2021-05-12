@@ -1,5 +1,5 @@
 <h2>Edit Board</h2>
-<h3>User Name: <%= current_user.username %></h3>
+<h3>User Name: <%= current_user.name %></h3>
 
 <h3>User Preferences:</h3>
 <h3>STRATEGY LIST</h3>
@@ -18,17 +18,17 @@
 <input type="text" name="board[name]"  value=”<%= @board.name %>”>
 <br>
 <label>For_1:</label>
-<input type="text" name="board[preference_num1]"  value=”<%= @board.preference_num1 %>”>
+<input type="text" name="board[preference_num1]"  value=<%= @board.preference_num1 %>>
 <label>For_2:</label>
-<input type="text" name="board[preference_num2]"  value=”<%= @board.preference_num2 %>”>
+<input type="text" name="board[preference_num2]"  value=<%= @board.preference_num2 %>>
 <label>For_3:</label>
-<input type="text" name="board[preference_num3]"  value=”<%= @board.preference_num3 %>”>
+<input type="text" name="board[preference_num3]"  value=<%= @board.preference_num3 %>>
 <label>For_4:</label>
-<input type="text" name="board[preference_num4]"  value=”<%= @board.preference_num4 %>”>
+<input type="text" name="board[preference_num4]"  value=<%= @board.preference_num4 %>>
 <label>For_5:</label>
-<input type="text" name="board[preference_num5]"  value=”<%= @board.preference_num5 %>”>
+<input type="text" name="board[preference_num5]"  value=<%= @board.preference_num5 %>>
 <label>For_PB:</label>
-<input type="integer" name="board[preference_PB]"  value=”<%= @board.preference_PB %>”>
+<input type="integer" name="board[preference_PB]"  value=<%= @board.preference_PB %>>
 <br>
 <h3>User Lucky Days:</h3>
 <br>
