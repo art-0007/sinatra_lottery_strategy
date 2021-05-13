@@ -24,22 +24,25 @@ class UserController < ApplicationController
     end
 
     get '/users/:id' do
-        binding.pry
+        #binding.pry
         @user = User.find(params[:id])
         erb :'users/index'
       end
     
       
-      get '/users/:id/edit' do  
+      get '/users/:id/edit' do 
+        if !logget_in?
+          redirect  "/users/login"
+        else
         @user =  User.find(params[:id])
-        #binding.pry
+        end
         erb :'/users/edit'
       end
     
       
     
       patch '/users/:id' do 
-        binding.pry
+        #binding.pry
         @user =  User.find(params[:id])
         
         @user.name = params[:name] unless params[:name].empty?

@@ -1,4 +1,4 @@
-class Scraper < ActiveRecord::Base
+class Scraper 
 
         URL = "https://data.ny.gov/resource/d6yy-54nr.json"
         SITE = "https://www.lotterycritic.com/lottery-winners/the-biggest-lottery-winners-where-are-they-now/"
@@ -11,12 +11,6 @@ class Scraper < ActiveRecord::Base
             #binding.pry
             results
         end
-# Prepared for new site!
-        # def self.how_to_claim
-        #     @@claim = Nokogiri::HTML(open(NY_LOTTERY))
-        #     #binding.pry
-        #     puts @@claim.css(".HowToClaim__Description-bmbzfk-8 dXsmkZ").text
-        # end
 
         def top_5_largest_jackpots
             @@doc = Nokogiri::HTML(open(SITE))
@@ -25,6 +19,6 @@ class Scraper < ActiveRecord::Base
       
       
         def make_draws
-            get_results.each {|draw| Draw.new_draws(draw)} 
+            get_results.each {|draw| Draw.(draw)} 
         end
     end

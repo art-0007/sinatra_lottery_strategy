@@ -61,23 +61,23 @@ th, td {
   </tr>
   <tr>
     <td>Rarely dropped numbers strategy</td>
-    <td>1,2,3,4,5,6</td>
+    <td><%=@analyzed_board.rarely_dropped_numbers%></td>
   </tr>
   <tr>
     <td>Frequently dropped numbers strategy </td>
-    <td>1,2,3,4,5,6</td>
+    <td><%=@analyzed_board.frequently_dropped_numbers%></td>
   </tr>
   <tr>
     <td>Long-standing numbers strategy</td>
-    <td>1,2,3,4,5,6</td>
+    <td><%=@analyzed_board.long_standing_numbers%><%=@analyzed_board.long_standing_powerball%></td>
   </tr>
   <tr>
     <td>Lucky days strategy</td>
-    <td>1,2,3,4,5,6</td>
+    <td><%=@analyzed_board.find_num_by_lucky_days%></td>
   </tr>
   <tr>
     <td>Mix strategy</td>
-    <td>1,2,3,4,5,6</td>
+    <td><%=@analyzed_board.mix_strategy%></td>
   </tr>
 </table>
 <form method="post" action="/board/<%= @board.id %>">

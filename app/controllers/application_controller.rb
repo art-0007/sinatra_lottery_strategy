@@ -19,14 +19,15 @@ class ApplicationController < Sinatra::Base
   end
 
   get "/application/signup" do
+    redirect '/' if logged_in?
     erb :'/application/welcome'
   end
 
   post "/application/signup" do
-    binding.pry
-    @user = User.new(:username => params[:email], :password => params[:psw])
+    #binding.pry
+    @user = User.new(:username => params[:username], :password => params[:psw])
     
-		if params[:email] == ""
+		if params[:username] == ""
       redirect "/failure"
     elsif params[:psw] != params[:psw_repeat]
       redirect "/failure"
@@ -54,10 +55,10 @@ class ApplicationController < Sinatra::Base
       User.find(session[:user_id])
     end
 
-    def top_5_largest_jackpots
-      @@doc = Nokogiri::HTML(open(SITE))
-      @@doc.css("div section")[1].text
-    end
+    # def top_5_largest_jackpots
+    #   @@doc = Nokogiri::HTML(open(SITE))
+    #   @@doc.css("div section")[1].text
+    # end
   end
 
 end
