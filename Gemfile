@@ -1,6 +1,5 @@
 source 'http://rubygems.org'
 
-  gem 'nokogiri'
   gem 'sinatra'
   gem 'thin'
   gem 'activerecord', '5.2', :require => 'active_record'
@@ -10,6 +9,9 @@ source 'http://rubygems.org'
   gem 'bcrypt'
   gem 'require_all'
   gem 'rack_session_access'
+  gem 'nokogiri'
+  gem 'open-uri'
+  gem 'json'
 
   group :development do
     gem 'rack-test'

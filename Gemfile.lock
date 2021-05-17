@@ -44,6 +44,7 @@ GEM
     eventmachine (1.2.7)
     i18n (1.8.10)
       concurrent-ruby (~> 1.0)
+    json (2.5.1)
     method_source (1.0.0)
     mini_mime (1.1.0)
     minitest (5.14.4)
@@ -51,6 +52,7 @@ GEM
       ruby2_keywords (~> 0.0.1)
     nokogiri (1.11.3-x86_64-darwin)
       racc (~> 1.4)
+    open-uri (0.1.0)
     pry (0.14.1)
       coderay (~> 1.1)
       method_source (~> 1.0)
@@ -124,7 +126,9 @@ DEPENDENCIES
   bcrypt
   capybara
   database_cleaner!
+  json
   nokogiri
+  open-uri
   pry
   rack-test
   rack_session_access

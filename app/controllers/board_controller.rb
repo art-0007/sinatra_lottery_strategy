@@ -52,8 +52,12 @@ class BoardController < ApplicationController
       
       delete "/board/:id"  do
         @board = Board.find(params[:id])
+        if @board.user_id == current_user.id
         @board.destroy
         redirect :'/users/index'
+        else
+          redirect '/falture'
+        end
       end
 
 

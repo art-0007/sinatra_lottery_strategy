@@ -4,6 +4,7 @@ class Scraper
         SITE = "https://www.lotterycritic.com/lottery-winners/the-biggest-lottery-winners-where-are-they-now/"
         NY_LOTTERY = "https://nylottery.ny.gov/how-to-claim"
         
+
         def get_results
             uri = URI.parse(URL)
             response = Net::HTTP.get_response(uri)
